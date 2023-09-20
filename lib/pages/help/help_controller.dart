@@ -5,29 +5,17 @@ import 'package:url_launcher/url_launcher.dart';
 
 class HelpContoller {
   //fonctions agissant sur la vue
-  MaterialColor whiteSwatch = const MaterialColor(255, {
-    50: Colors.black,
-    100: Colors.black,
-    200: Colors.black,
-    300: Colors.black,
-    400: Colors.black,
-    500: Colors.black,
-    600: Colors.black,
-    700: Colors.black,
-    800: Colors.black,
-    900: Colors.black,
-  });
 
   bool iconBool = false;
   IconData iconLight = Icons.wb_sunny;
   IconData iconDark = Icons.nights_stay;
 
   final ThemeData LightTheme = ThemeData(
-    primarySwatch: Colors.amber,
+    primarySwatch: Colors.grey,
     brightness: Brightness.light,
   );
 
-  ThemeData darkTheme = ThemeData(
+  ThemeData DarkTheme = ThemeData(
     primarySwatch: Colors.blueGrey,
     brightness: Brightness.dark,
   );
@@ -41,6 +29,6 @@ class HelpContoller {
   }
 
   HelpContoller() {
-    data = viewModel.fetchSocialNetworkFromData();
+    data = viewModel.getAllSocialNetwork();
   }
 }
