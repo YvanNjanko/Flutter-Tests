@@ -28,7 +28,7 @@ class HelpContoller {
     launchUrl(Uri.parse(Url));
   }
 
-  HelpController() {
+  HelpContoller() {
     data = viewModel.getAllSocialNetwork();
   }
 }
