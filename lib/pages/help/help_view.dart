@@ -1,15 +1,20 @@
+import 'package:appli/repository/socialNetwork_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:appli/models/social_networks.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'help_controller.dart';
+import 'package:get/get.dart';
+import 'help_view_model.dart';
 
 class HelpView extends StatelessWidget {
-  final HelpContoller controller = HelpContoller();
-
-  HelpView({super.key});
+  const HelpView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final repository = Get.find<SocialNetworkRepository>();
+    HelpViewModel viewModel = HelpViewModel(repository);
+    final HelpContoller controller = HelpContoller(viewModel);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text("Help"),
@@ -50,3 +55,4 @@ class HelpView extends StatelessWidget {
     );
   }
 }
+
