@@ -1,28 +1,19 @@
-import 'package:appli/pages/help/help_controller.dart';
 import 'package:appli/pages/help/help_view.dart';
+import 'package:appli/repository/socialNetwork_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    HelpContoller controller = HelpContoller();
-
+    Get.put(SocialNetworkRepository());
     return MaterialApp(
-      theme: controller.iconBool ? controller.DarkTheme : controller.LightTheme,
-      home: HelpView()
+      title: 'Mon application',
+      home: HelpView(),
     );
   }
-
-
 }
