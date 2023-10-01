@@ -4,7 +4,7 @@ import 'package:appli/pages/help/help_view_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HelpContoller {
-  //fonctions agissant sur la vue
+  // view function
 
   bool iconBool = false;
   IconData iconLight = Icons.wb_sunny;
@@ -20,7 +20,7 @@ class HelpContoller {
     brightness: Brightness.dark,
   );
 
-  HelpViewModel viewModel = HelpViewModel();
+  HelpViewModel viewModel;
 
   List<SocialNetwork> data = [];
 
@@ -28,7 +28,9 @@ class HelpContoller {
     launchUrl(Uri.parse(Url));
   }
 
-  HelpContoller() {
+  HelpContoller(HelpViewModel Hview):
+    viewModel = Hview{
     data = viewModel.getAllSocialNetwork();
-  }
+    }
+  
 }

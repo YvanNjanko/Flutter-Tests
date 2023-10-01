@@ -59,7 +59,7 @@ List datas = [
       IconData icon = data['icon'];
       Color color = data['color'];
 
-      SocialNetwork socialNetwork = SocialNetwork(name, url, icon, color);
+      SocialNetwork socialNetwork = SocialNetwork.fromJson(data);
       socialNetworks.add(socialNetwork);
     }
 
