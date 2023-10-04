@@ -2,9 +2,8 @@ import 'package:appli/models/social_networks.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 
-class SocialNetworkRepository{
-
-List datas = [
+class SocialNetworkRepository {
+  List datas = [
     {
       "name": "Google",
       "url": "https://google.com",
@@ -49,8 +48,7 @@ List datas = [
     },
   ];
 
-
-   List<SocialNetwork> fetchSocialNetworkFromData() {
+  List<SocialNetwork> fetchSocialNetworkFromData() {
     List<SocialNetwork> socialNetworks = [];
 
     for (var data in datas) {
