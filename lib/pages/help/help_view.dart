@@ -51,7 +51,6 @@ class HelpView extends StatelessWidget {
   }
 }
 
-
 class NavigationDrawer extends StatelessWidget {
   const NavigationDrawer({Key? key}) : super(key: key);
 
