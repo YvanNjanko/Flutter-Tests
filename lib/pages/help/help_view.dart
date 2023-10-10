@@ -20,9 +20,9 @@ class HelpView extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'TransAll',
-          style: TextStyle(color: Colors.white),    
+          style: TextStyle(color: Colors.white),
         ),
-        ),
+      ),
       endDrawer: const NavigationDrawer(),
       body: ListView(
         children: controller.data.map((SocialNetwork item) {
@@ -69,17 +69,20 @@ class NavigationDrawer extends StatelessWidget {
 
   Widget buildHeader(BuildContext context) => Container(
         padding: EdgeInsets.only(
-          top: MediaQuery.of(context).padding.top,
-          bottom: 24,
+          top: 100,
+          bottom: 60,
         ),
-        child: const Column(children: [
+        child: Column(children: [
           CircleAvatar(
-            radius: 60,
-            // backgroundImage: Image(image: image),
+            backgroundColor: Colors.transparent,
+            radius: 70,
+            child: Image.asset(
+              'assets/images/Frame5.png',
+            ),
           ),
-          Text(
+          const Text(
             'TransAll',
-            style: TextStyle(fontSize: 28, color: Colors.black),
+            style: TextStyle(fontSize: 38, color: Colors.black),
           ),
         ]),
       );
@@ -87,48 +90,34 @@ class NavigationDrawer extends StatelessWidget {
   Widget buildMenuItems(BuildContext context) => Wrap(
         runSpacing: 20,
         children: [
-          // ListTile(
-          //   leading: const Icon(Icons.home_outlined),
-          //   title: const Text('Home'),
-          //   onTap: () {},
-          // ),
-          // ListTile(
-          //   leading: const Icon(Icons.favorite_border),
-          //   title: const Text('Favorites'),
-          //   onTap: () {},
-          // ),
-          // ListTile(
-          //   leading: const Icon(Icons.workspaces_outline),
-          //   title: const Text('Workflow'),
-          //   onTap: () {},
-          // ),
-          // ListTile(
-          //   leading: const Icon(Icons.update),
-          //   title: const Text('Upadte'),
-          //   onTap: () {},
-          // ),
           const Divider(
             color: Colors.grey,
-            height: 200,
+            height: 150,
+          ),
+          ListTile(
+            title: const Text(
+              'Follow us',
+              style: TextStyle(fontSize: 25),
+            ),
           ),
           ListTile(
             leading: const Icon(FontAwesomeIcons.facebook),
             title: const Text('Facebook'),
-            onTap:  () {
+            onTap: () {
               launch('https://www.facebook.com');
             },
           ),
           ListTile(
             leading: const Icon(FontAwesomeIcons.instagram),
             title: const Text('Instagram'),
-            onTap:  () {
+            onTap: () {
               launch('https://www.instagram.com');
             },
           ),
           ListTile(
             leading: const Icon(FontAwesomeIcons.twitter),
             title: const Text('Twitter'),
-            onTap:  () {
+            onTap: () {
               launch('https://www.twitter.com');
             },
           )
