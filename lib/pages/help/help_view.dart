@@ -23,7 +23,7 @@ class HelpView extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      endDrawer: const NavigationDrawer(),
+      drawer: const NavigationDrawer(),
       body: ListView(
         children: controller.data.map((SocialNetwork item) {
           return Card(
@@ -68,7 +68,7 @@ class NavigationDrawer extends StatelessWidget {
       );
 
   Widget buildHeader(BuildContext context) => Container(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           top: 100,
           bottom: 60,
         ),
@@ -94,8 +94,8 @@ class NavigationDrawer extends StatelessWidget {
             color: Colors.grey,
             height: 150,
           ),
-          ListTile(
-            title: const Text(
+          const ListTile(
+            title: Text(
               'Follow us',
               style: TextStyle(fontSize: 25),
             ),
